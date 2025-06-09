@@ -1899,6 +1899,11 @@
           androidHappBtn.href = SUB_URL_SCHEMES.happ;
         }
 
+        const iosHappBtn = document.getElementById('sub-url-ios-happ');
+        if (iosHappBtn) {
+          iosHappBtn.href = SUB_URL_SCHEMES.happ;
+        }
+
         // QR code for main subscription
         const qrContainer = document.getElementById("qr-code");
         qrContainer.innerHTML = ""; // Очищаем контейнер на всякий случай
