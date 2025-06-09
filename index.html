@@ -1218,7 +1218,7 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs-i18n@2.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
-    <script src="translations.js"></script>
+    <script src="./translations.js"></script>
     <script>
       // Data from server
       const SUB_URL = "{{ user.subscription_url }}";
@@ -1231,10 +1231,10 @@
           "{% if user.data_limit %}{{ user.data_limit | bytesformat }}{% endif %}",
       };
     </script>
-    <script src="theme.js"></script>
-    <script src="i18n.js"></script>
-    <script src="app.js"></script>
-    <script src="alpine-data.js"></script>
+    <script src="./theme.js"></script>
+    <script src="./i18n.js"></script>
+    <script src="./app.js"></script>
+    <script src="./alpine-data.js"></script>
     <script>
       initTheme();
       initApp();
