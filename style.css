@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --bs-body-font-family: "Inter", sans-serif;
+}
+
+[data-bs-theme="light"] {
+  --bs-body-bg: #fff;
+
+  --my-gray-color: #f6f5f4;
+  --my-dark-gray-color: #eaeaea;
+  --my-alpha-gray-color: rgba(50, 50, 50, 0.75);
+  --my-alpha-dark-gray-color: rgba(0, 0, 0, 0.15);
+  --my-emphasis-focus-shadow-rgb: 0, 0, 0;
+
+  --my-heading-color: rgb(30, 25, 20);
+  --my-content-color: rgba(0, 0, 0, 0.65);
+  --my-dropdown-bg: #fff;
+  --my-dropdown-link-hover-bg: rgba(55, 53, 47, 0.05);
+  --my-modal-bg: #fff;
+}
+
+/* Добавляем специальные стили для светлой темы */
+[data-bs-theme="light"] .input-group {
+  --bs-secondary-bg: #f8f8f8;
+  background-color: #f8f8f8;
+}
+
+[data-bs-theme="light"] .input-group .form-control {
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+[data-bs-theme="light"] .btn-copy-server,
+[data-bs-theme="light"] .my-btn-secondary {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+[data-bs-theme="light"] .btn-copy-server:hover,
+[data-bs-theme="light"] .my-btn-secondary:hover {
+  background-color: #dee2e6;
+}
+
+[data-bs-theme="light"] .btn-copy-server i,
+[data-bs-theme="light"] .my-btn-secondary svg {
+  color: #333;
+  fill: #333;
+}
+
+[data-bs-theme="light"] .text-bg-dark {
+  background-color: #f8f8f8 !important;
+  color: #333 !important;
+}
+
+[data-bs-theme="light"] .my-block-big {
+  background-color: #f6f5f4;
+}
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #151515;
+
+  --my-gray-color: #232323;
+  --my-dark-gray-color: #1c1c1c;
+  --my-alpha-gray-color: rgba(255, 255, 255, 0.5);
+  --my-alpha-dark-gray-color: rgba(255, 255, 255, 0.15);
+  --my-emphasis-focus-shadow-rgb: 255, 255, 255;
+
+  --my-heading-color: rgb(225, 225, 225);
+  --my-content-color: rgba(255, 255, 255, 0.55);
+  --my-dropdown-bg: #2c2c2c;
+  --my-dropdown-link-hover-bg: rgba(255, 255, 255, 0.05);
+  --my-modal-bg: #232323;
+}
+
+/* Добавляем улучшенные стили для темной темы */
+[data-bs-theme="dark"] .input-group {
+  --bs-secondary-bg: #282a36;
+  background-color: #282a36;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+[data-bs-theme="dark"] .input-group .form-control {
+  background-color: #282a36;
+  color: #e9ecef;
+  border: none;
+  padding-left: 1rem;
+}
+
+[data-bs-theme="dark"] .btn-copy-server {
+  background-color: #2a2d3d;
+  color: #8be9fd;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+[data-bs-theme="dark"] .my-btn-secondary {
+  background-color: #2a2d3d;
+  color: #8be9fd;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+[data-bs-theme="dark"] .btn-copy-server:hover,
+[data-bs-theme="dark"] .my-btn-secondary:hover {
+  background-color: #3a3f55;
+  transform: translateY(-2px);
+}
+
+[data-bs-theme="dark"] .btn-copy-server i {
+  color: #8be9fd;
+}
+
+[data-bs-theme="dark"] .my-btn-secondary svg {
+  fill: #8be9fd;
+}
+
+[data-bs-theme="dark"] .text-bg-dark {
+  background-color: #282a36 !important;
+  color: #e9ecef !important;
+}
+
+[data-bs-theme="dark"] .my-block-big {
+  background-color: #232323;
+  border: 1px solid #2a2d3d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bi {
+  fill: currentColor;
+  width: 1em;
+  height: 1em;
+}
+
+.dropdown-toggle::after {
+  mask: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M8.7 13.7c.4-.4 1.1-.4 1.5 0l6 6 6-6c.4-.4 1.1-.4 1.5 0s.4 1.1 0 1.5L17 21.9c-.4.4-1.1.4-1.5 0l-6.7-6.7c-.5-.6-.5-1.1-.1-1.5'/%3E%3C/svg%3E")
+    50% 50% / cover no-repeat;
+  float: right;
+  width: 1em;
+  height: 1.25em;
+  margin-inline-end: -3px;
+  margin-inline-start: 3px;
+  background-color: currentColor;
+}
+
+.modal-backdrop {
+  --bs-backdrop-opacity: 0.75;
+}
+
+.ms-auto {
+  margin-left: 0 !important;
+  margin-inline-start: auto !important;
+}
+
+.my-container {
+  max-width: 1024px;
+}
+
+.my-navbar {
+  --bs-navbar-nav-link-padding-x: 0.75rem;
+}
+
+.my-navbar .navbar-toggler {
+  --bs-navbar-toggler-border-color: transparent;
+  --bs-navbar-toggler-padding-x: 0;
+  --bs-navbar-toggler-padding-y: 0;
+}
+
+@media (max-width: 576px) {
+  .my-navbar .navbar-nav {
+    --bs-nav-link-padding-y: 0.75rem;
+  }
+
+  .my-navbar .nav-item .nav-link {
+    border-top: 1px solid var(--my-alpha-dark-gray-color);
+  }
+
+  .my-navbar .dropdown-menu {
+    margin-bottom: 1rem;
+  }
+}
+
+.my-nav-link,
+.my-nav-outline {
+  display: flex;
+  align-items: center;
+}
+
+.my-nav-link:focus-visible,
+.my-nav-outline:focus-visible {
+  border-radius: var(--bs-border-radius-lg);
+  box-shadow: 0 0 0 0.25rem var(--my-alpha-gray-color);
+}
+
+.my-nav-link .bi,
+.my-nav-outline .bi {
+  margin-inline-end: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.my-nav-link-text {
+  margin-inline-end: auto;
+}
+
+.my-nav-outline {
+  --bs-nav-link-padding-x: 0.85rem;
+  --bs-nav-link-padding-y: 0.25rem;
+  --bs-nav-link-color: var(--my-heading-color);
+  --bs-nav-link-hover-color: var(--my-heading-color);
+  border: 1px solid var(--my-alpha-dark-gray-color);
+  border-radius: var(--bs-border-radius-lg);
+}
+
+.my-nav-outline:hover {
+  background-color: var(--my-gray-color);
+}
+
+.my-nav-outline.show {
+  background-color: var(--my-gray-color);
+}
+
+.my-dropdown .dropdown-menu {
+  --bs-dropdown-padding-x: 0.25rem;
+  --bs-dropdown-padding-y: 0.25rem;
+  --bs-dropdown-spacer: 0;
+  --bs-dropdown-bg: var(--my-dropdown-bg);
+  --bs-dropdown-border-color: none;
+  --bs-dropdown-border-radius: var(--bs-border-radius-lg);
+  --bs-dropdown-link-color: var(--my-heading-color);
+  --bs-dropdown-link-hover-color: var(--my-heading-color);
+  --bs-dropdown-link-hover-bg: var(--my-dropdown-link-hover-bg);
+  --bs-dropdown-link-active-color: var(--my-heading-color);
+  --bs-dropdown-link-active-bg: var(--my-dropdown-bg);
+  --bs-dropdown-item-padding-x: 1rem;
+  --bs-dropdown-item-padding-y: 0.5rem;
+  --bs-dropdown-item-border-radius: var(--bs-border-radius);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+.my-dropdown .dropdown-item {
+  display: flex;
+  align-items: center;
+}
+
+.my-dropdown .dropdown-item span {
+  margin-inline-end: 2rem;
+}
+
+.my-dropdown .dropdown-item.active:hover {
+  background-color: var(--my-dropdown-link-hover-bg);
+}
+
+.my-dropdown .dropdown-item:hover:active {
+  background-color: var(--my-dropdown-link-hover-bg);
+}
+
+.my-dropdown .my-dropdown-item-icon {
+  margin-inline-end: 0.5rem;
+  color: var(--my-alpha-gray-color);
+}
+
+.my-dropdown .my-dropdown-item-check {
+  margin-inline-start: auto;
+  color: transparent;
+}
+
+.my-dropdown .active .my-dropdown-item-check {
+  color: var(--my-heading-color);
+}
+
+.my-btn-primary,
+.my-btn-secondary,
+.my-btn-neutral,
+.my-btn-outline {
+  --bs-btn-padding-x: 0.85rem;
+  --bs-btn-padding-y: 0.25rem;
+  --bs-btn-color: #fff;
+  --bs-btn-border-radius: var(--bs-border-radius-lg);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-border-color: transparent;
+}
+
+.my-btn-primary {
+  --bs-btn-bg: rgb(25, 125, 225);
+  --bs-btn-hover-bg: rgb(0, 110, 210);
+  --bs-btn-focus-shadow-rgb: 25, 125, 225;
+  --bs-btn-active-bg: rgb(0, 95, 195);
+}
+
+.my-btn-secondary {
+  --bs-btn-color: rgb(25, 125, 225);
+  --bs-btn-bg: rgba(25, 125, 225, 0.15);
+  --bs-btn-hover-color: rgb(25, 125, 225);
+  --bs-btn-hover-bg: rgba(25, 125, 225, 0.2);
+  --bs-btn-focus-shadow-rgb: 25, 125, 225;
+  --bs-btn-active-color: rgb(25, 125, 225);
+  --bs-btn-active-bg: rgba(25, 125, 225, 0.25);
+  --bs-btn-active-border-color: transparent;
+}
+
+.my-btn-neutral {
+  --bs-btn-bg: rgb(50, 50, 50);
+  --bs-btn-hover-bg: rgb(65, 65, 65);
+  --bs-btn-focus-shadow-rgb: var(--my-emphasis-focus-shadow-rgb);
+  --bs-btn-active-bg: rgb(75, 75, 75);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: rgb(50, 50, 50);
+  --bs-btn-disabled-border-color: transparent;
+}
+
+.my-btn-outline {
+  --bs-btn-color: var(--my-heading-color);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: var(--my-alpha-dark-gray-color);
+  --bs-btn-hover-color: var(--my-heading-color);
+  --bs-btn-hover-bg: var(--my-gray-color);
+  --bs-btn-hover-border-color: var(--my-alpha-dark-gray-color);
+  --bs-btn-focus-shadow-rgb: var(--my-emphasis-focus-shadow-rgb);
+  --bs-btn-active-color: var(--my-heading-color);
+  --bs-btn-active-bg: var(--my-dark-gray-color);
+  --bs-btn-active-border-color: var(--my-alpha-dark-gray-color);
+}
+
+.my-modal {
+  --bs-modal-margin: 1rem;
+  --bs-modal-bg: var(--my-modal-bg);
+  --bs-modal-border-width: 0;
+  --bs-modal-border-radius: var(--bs-border-radius-xl);
+  --bs-modal-header-padding: 1.5rem 1.5rem 0;
+  --bs-modal-header-border-width: 0;
+}
+
+@media (min-width: 576px) {
+  .my-modal {
+    --bs-modal-padding: 2rem;
+  }
+}
+
+.my-modal .modal-dialog {
+  max-width: 420px;
+}
+
+.my-modal .modal-content {
+  padding-bottom: 1.5rem;
+}
+
+#qr-code canvas {
+  width: 100%;
+  max-width: 240px;
+  margin-top: 0.5rem;
+  border-radius: var(--bs-border-radius-xl);
+}
+
+@media (max-width: 320px) {
+  .my-row-xs > * {
+    width: 100%;
+  }
+}
+
+.my-block,
+.my-block-big {
+  border-radius: var(--bs-border-radius-xl);
+  background-color: var(--my-gray-color);
+}
+
+.my-block {
+  padding: 1rem;
+}
+
+.my-block .bi {
+  font-size: 1.5rem;
+}
+
+.my-block-big {
+  padding: 1.5rem;
+  padding-top: 0.75rem;
+}
+
+.my-text-blue {
+  color: #0a85d1;
+}
+
+.my-text-green {
+  color: #1aad3a;
+}
+
+.my-text-red {
+  color: #ea4e43;
+}
+
+.my-text-yellow {
+  color: #fb3;
+}
+
+.my-text-heading {
+  color: var(--my-heading-color);
+}
+
+.my-text-content {
+  color: var(--my-content-color);
+}
+
+.my-step-counter {
+  display: block;
+  color: #57b5ef;
+  font-weight: 500;
+  font-size: 2.5rem;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.my-step-counter::after {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+}
+
+.my-tab-pane {
+  counter-reset: step-counter 0;
+}
+
+/* Переносим длинные названия серверов на мобильных */
+.my-link-separate {
+  word-break: break-all;   /* разрешаем разрыв слова на любой позиции */
+  white-space: normal;     /* убираем nowrap, чтобы перенос вообще был возможен */
+}
+
+@media (max-width: 576px) {
+  .my-link-separate {
+    word-break: break-all;
+    white-space: normal;
+  }
+}
+
+/* перенос длинных названий в видимом блоке */
+.my-link-visible{
+  word-break: break-word;   /* любой разрыв слова */
+  white-space: normal;      /* переносы разрешены */
+  padding-right: .5rem;     /* чтобы текст не упирался в кнопку */
+}
+
+@media (max-width:576px){
+  .my-link-visible{font-size:0.9rem;} /* при желании уменьшим кегль */
+} 
