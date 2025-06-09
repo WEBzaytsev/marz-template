@@ -512,6 +512,30 @@
       .my-tab-pane {
         counter-reset: step-counter 0;
       }
+
+      /* Переносим длинные названия серверов на мобильных */
+      .my-link-separate {
+        word-break: break-all;   /* разрешаем разрыв слова на любой позиции */
+        white-space: normal;     /* убираем nowrap, чтобы перенос вообще был возможен */
+      }
+
+      @media (max-width: 576px) {
+        .my-link-separate {
+          word-break: break-all;
+          white-space: normal;
+        }
+      }
+
+      /* перенос длинных названий в видимом блоке */
+      .my-link-visible{
+        word-break: break-word;   /* любой разрыв слова */
+        white-space: normal;      /* переносы разрешены */
+        padding-right: .5rem;     /* чтобы текст не упирался в кнопку */
+      }
+
+      @media (max-width:576px){
+        .my-link-visible{font-size:0.9rem;} /* при желании уменьшим кегль */
+      }
     </style>
   </head>
   <body>
@@ -885,13 +909,18 @@
         <div
           class="input-group input-group-lg border border-0 text-bg-dark rounded-4 mb-3"
         >
+          <!-- Скрытый инпут: нужен скрипту для data-original-link -->
           <input
-            class="form-control my-link-separate border border-0 ps-4"
-            type="text"
-            value="{{ link }}"
-            disabled
-            readonly
-          />
+              type="text"
+              class="d-none my-link-hidden"
+              value="{{ link }}"
+              readonly
+              disabled />
+
+          <!-- Видимый элемент с именем сервера -->
+          <span class="form-control my-link-visible ps-4"
+                data-original-link="{{ link }}"></span>
+
           <button
             class="btn my-btn btn-copy-server fs-5 mt-2 mb-2 rounded-3 pb-2 pt-1"
             data-link="{{ link }}"
@@ -1621,6 +1650,9 @@
                     qrButton.setAttribute("data-qr-link", link);
                   }
                 }
+
+                const span = parent.querySelector('.my-link-visible');
+                if (span) span.textContent = name;
               }
             }
           } catch (e) {
@@ -1826,9 +1858,7 @@
             // --- Retrieve link from related input's data-original-link ---
             const parentGroup = button.closest(".input-group");
             if (parentGroup) {
-              const relatedInput = parentGroup.querySelector(
-                ".my-link-separate[data-original-link]"
-              );
+              const relatedInput = parentGroup.querySelector('[data-original-link]');
               if (relatedInput) {
                 link = relatedInput.getAttribute("data-original-link");
                 console.log(
