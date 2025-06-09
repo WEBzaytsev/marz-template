@@ -1017,62 +1017,87 @@
           aria-labelledby="btn-guide-android-tab"
           role="tabpanel"
         >
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-            <div class="col">
-              <div class="my-block-big h-100">
-                <span class="my-step-counter mb-1"></span>
-                <h5
-                  class="my-text-heading fw-semibold"
-                  x-text="$t('guideContent.android.first.title')"
-                ></h5>
-                <p
-                  class="my-text-content"
-                  x-html="$t('guideContent.android.first.text')"
-                ></p>
-                <a
-                  class="btn my-btn-secondary"
-                  href="https://play.google.com/store/apps/details?id=app.hiddify.com"
-                  role="button"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <span x-text="$t('openInApp', {app: 'Google Play'})"></span>
-                </a>
+          <!-- Program selector for Android (same options as PC) -->
+          <ul class="nav nav-pills mb-3" id="android-app-tabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="android-app-clashverge-tab" data-bs-toggle="pill" data-bs-target="#android-app-clashverge" type="button" role="tab" aria-selected="true" x-text="$t('clashVerge')"></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="android-app-flclash-tab" data-bs-toggle="pill" data-bs-target="#android-app-flclash" type="button" role="tab" aria-selected="false" x-text="$t('flClash')"></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="android-app-happ-tab" data-bs-toggle="pill" data-bs-target="#android-app-happ" type="button" role="tab" aria-selected="false" x-text="$t('happAlpha')"></button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="android-app-tabsContent">
+            <div class="tab-pane fade show active" id="android-app-clashverge" role="tabpanel" aria-labelledby="android-app-clashverge-tab">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('guideContent.android.first.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content"
+                      x-html="$t('guideContent.android.first.text')"
+                    ></p>
+                    <a
+                      class="btn my-btn-secondary"
+                      href="https://play.google.com/store/apps/details?id=app.hiddify.com"
+                      role="button"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <span x-text="$t('openInApp', {app: 'Google Play'})"></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('guideContent.android.second.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content"
+                      x-html="$t('guideContent.android.second.text')"
+                    ></p>
+                    <a
+                      class="btn my-btn-primary"
+                      id="sub-url-android"
+                      role="button"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      x-text="$t('addSubscription')"
+                    ></a>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('guideContent.android.third.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content mb-0"
+                      x-html="$t('guideContent.android.third.text')"
+                    ></p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col">
-              <div class="my-block-big h-100">
-                <span class="my-step-counter mb-1"></span>
-                <h5
-                  class="my-text-heading fw-semibold"
-                  x-text="$t('guideContent.android.second.title')"
-                ></h5>
-                <p
-                  class="my-text-content"
-                  x-html="$t('guideContent.android.second.text')"
-                ></p>
-                <a
-                  class="btn my-btn-primary"
-                  id="sub-url-android"
-                  role="button"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  x-text="$t('addSubscription')"
-                ></a>
-              </div>
+
+            <div class="tab-pane fade" id="android-app-flclash" role="tabpanel" aria-labelledby="android-app-flclash-tab">
+              <div class="alert alert-secondary" role="alert" x-text="$t('comingSoon')"></div>
             </div>
-            <div class="col">
-              <div class="my-block-big h-100">
-                <span class="my-step-counter mb-1"></span>
-                <h5
-                  class="my-text-heading fw-semibold"
-                  x-text="$t('guideContent.android.third.title')"
-                ></h5>
-                <p
-                  class="my-text-content mb-0"
-                  x-html="$t('guideContent.android.third.text')"
-                ></p>
-              </div>
+
+            <div class="tab-pane fade" id="android-app-happ" role="tabpanel" aria-labelledby="android-app-happ-tab">
+              <div class="alert alert-secondary" role="alert" x-text="$t('comingSoon')"></div>
             </div>
           </div>
         </div>
@@ -1082,62 +1107,87 @@
           aria-labelledby="btn-guide-ios-tab"
           role="tabpanel"
         >
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-            <div class="col">
-              <div class="my-block-big h-100">
-                <span class="my-step-counter mb-1"></span>
-                <h5
-                  class="my-text-heading fw-semibold"
-                  x-text="$t('guideContent.ios.first.title')"
-                ></h5>
-                <p
-                  class="my-text-content"
-                  x-html="$t('guideContent.ios.first.text')"
-                ></p>
-                <a
-                  class="btn my-btn-secondary"
-                  href="https://apps.apple.com/app/hiddify-proxy-vpn/id6596777532"
-                  role="button"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <span x-text="$t('openInApp', {app: 'App Store'})"></span>
-                </a>
+          <!-- Program selector for iOS (same options as PC) -->
+          <ul class="nav nav-pills mb-3" id="ios-app-tabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="ios-app-clashverge-tab" data-bs-toggle="pill" data-bs-target="#ios-app-clashverge" type="button" role="tab" aria-selected="true" x-text="$t('clashVerge')"></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="ios-app-flclash-tab" data-bs-toggle="pill" data-bs-target="#ios-app-flclash" type="button" role="tab" aria-selected="false" x-text="$t('flClash')"></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="ios-app-happ-tab" data-bs-toggle="pill" data-bs-target="#ios-app-happ" type="button" role="tab" aria-selected="false" x-text="$t('happAlpha')"></button>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="ios-app-tabsContent">
+            <div class="tab-pane fade show active" id="ios-app-clashverge" role="tabpanel" aria-labelledby="ios-app-clashverge-tab">
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('guideContent.ios.first.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content"
+                      x-html="$t('guideContent.ios.first.text')"
+                    ></p>
+                    <a
+                      class="btn my-btn-secondary"
+                      href="https://apps.apple.com/app/hiddify-proxy-vpn/id6596777532"
+                      role="button"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <span x-text="$t('openInApp', {app: 'App Store'})"></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('guideContent.ios.second.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content"
+                      x-html="$t('guideContent.ios.second.text')"
+                    ></p>
+                    <a
+                      class="btn my-btn-primary"
+                      id="sub-url-ios"
+                      role="button"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      x-text="$t('addSubscription')"
+                    ></a>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('guideContent.ios.third.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content mb-0"
+                      x-html="$t('guideContent.ios.third.text')"
+                    ></p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col">
-              <div class="my-block-big h-100">
-                <span class="my-step-counter mb-1"></span>
-                <h5
-                  class="my-text-heading fw-semibold"
-                  x-text="$t('guideContent.ios.second.title')"
-                ></h5>
-                <p
-                  class="my-text-content"
-                  x-html="$t('guideContent.ios.second.text')"
-                ></p>
-                <a
-                  class="btn my-btn-primary"
-                  id="sub-url-ios"
-                  role="button"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  x-text="$t('addSubscription')"
-                ></a>
-              </div>
+
+            <div class="tab-pane fade" id="ios-app-flclash" role="tabpanel" aria-labelledby="ios-app-flclash-tab">
+              <div class="alert alert-secondary" role="alert" x-text="$t('comingSoon')"></div>
             </div>
-            <div class="col">
-              <div class="my-block-big h-100">
-                <span class="my-step-counter mb-1"></span>
-                <h5
-                  class="my-text-heading fw-semibold"
-                  x-text="$t('guideContent.ios.third.title')"
-                ></h5>
-                <p
-                  class="my-text-content mb-0"
-                  x-html="$t('guideContent.ios.third.text')"
-                ></p>
-              </div>
+
+            <div class="tab-pane fade" id="ios-app-happ" role="tabpanel" aria-labelledby="ios-app-happ-tab">
+              <div class="alert alert-secondary" role="alert" x-text="$t('comingSoon')"></div>
             </div>
           </div>
         </div>
