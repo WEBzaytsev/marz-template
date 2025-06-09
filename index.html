@@ -1176,11 +1176,75 @@
               role="tabpanel"
               aria-labelledby="android-app-happ-tab"
             >
-              <div
-                class="alert alert-secondary"
-                role="alert"
-                x-text="$t('comingSoon')"
-              ></div>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('happ.android.first.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content"
+                      x-html="$t('happ.android.first.text')"
+                    ></p>
+                    <div class="d-flex flex-wrap gap-2">
+                      <a
+                        class="btn my-btn-secondary"
+                        href="https://play.google.com/store/apps/details?id=com.happproxy"
+                        role="button"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        <span x-text="$t('openInApp', {app: 'Google Play'})"></span>
+                      </a>
+                      <a
+                        class="btn my-btn-secondary"
+                        href="https://github.com/Happ-proxy/happ-android/releases/latest/download/Happ.apk"
+                        role="button"
+                        rel="noopener noreferrer"
+                        target="_blank"
+                      >
+                        Download APK
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('happ.android.second.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content"
+                      x-html="$t('happ.android.second.text')"
+                    ></p>
+                    <a
+                      class="btn my-btn-primary"
+                      id="sub-url-android-happ"
+                      role="button"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      x-text="$t('addSubscription')"
+                    ></a>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('happ.android.third.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content mb-0"
+                      x-html="$t('happ.android.third.text')"
+                    ></p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1776,6 +1840,12 @@
           }
         }
 
+        // Дополнительная поддержка для специфичных кнопок приложений
+        const androidHappBtn = document.getElementById('sub-url-android-happ');
+        if (androidHappBtn) {
+          androidHappBtn.href = SUB_URL_SCHEMES.happ;
+        }
+
         // QR code for main subscription
         const qrContainer = document.getElementById("qr-code");
         qrContainer.innerHTML = ""; // Очищаем контейнер на всякий случай
@@ -1952,6 +2022,7 @@
         pc: `hiddify://import/${SUB_URL}`,
         android: `hiddify://import/${SUB_URL}`,
         ios: `hiddify://import/${SUB_URL}`,
+        happ: `happ://add/${SUB_URL}`,
       };
 
       // Default locale used to display content if
@@ -1987,7 +2058,7 @@
           addSubscription: "Add subscription",
           clashVerge: "⭐ Hiddify",
           flClash: "FlClash",
-          happAlpha: "Happ (alpha)",
+          happAlpha: "⭐ Happ",
           comingSoon: "Coming soon…",
           separateLinksTitle: "Available Servers List",
           separateLinks1:
@@ -2035,6 +2106,22 @@
               third: {
                 title: "Connect and enjoy",
                 text: "In the main section, press the large power button in the center to connect to the VPN. If needed, select another server in the <b>Proxy</b> section. Enjoy :)",
+              },
+            },
+            happ: {
+              android: {
+                first: {
+                  title: "Install and open Happ",
+                  text: "Open the page in Google Play and install the app. Or install the app directly from the APK file if Google Play is not working.",
+                },
+                second: {
+                  title: "Add the subscription",
+                  text: "Click the button below to add subscription",
+                },
+                third: {
+                  title: "Connect and use",
+                  text: "Open the app and connect to the server",
+                },
               },
             },
           },
@@ -2117,6 +2204,22 @@
                 text: "В главном разделе нажми большую кнопку включения в центре для подключения к VPN. При необходимости выбери другой сервер в разделе <b>Прокси</b>. Пользуйся :)",
               },
             },
+            happ: {
+              android: {
+                first: {
+                  title: "Установи и открой Happ",
+                  text: "Открой страницу в Google Play и установи приложение. Запусти его, выбери регион <b>Россия</b>, а затем нажми <b>Старт</b>.",
+                },
+                second: {
+                  title: "Добавь подписку",
+                  text: "Нажми кнопку ниже — приложение откроется, и подписка добавится автоматически.",
+                },
+                third: {
+                  title: "Подключись и пользуйся",
+                  text: "В главном разделе нажми большую кнопку включения в центре для подключения к VPN. При необходимости выбери другой сервер, нажав на «>» внизу. Пользуйся :)",
+                },
+              },
+            },
           },
         },
         zh: {
@@ -2147,7 +2250,7 @@
           addSubscription: "添加订阅",
           clashVerge: "⭐ Hiddify",
           flClash: "FlClash",
-          happAlpha: "Happ (alpha)",
+          happAlpha: "⭐ Happ",
           comingSoon: "Coming soon…",
           separateLinksTitle: "可用服务器列表",
           separateLinks1:
@@ -2197,6 +2300,22 @@
                 text: `在主界面点击中心的大开关按钮以连接到 VPN。如有需要，可以在<b>代理</b>部分选择其他服务器。尽情享受 :)`,
               },
             },
+            happ: {
+              android: {
+                first: {
+                  title: "安装并打开 Happ",
+                  text: "在 Google Play 页面打开并安装应用程序。启动应用，选择区域 <b>俄罗斯</b>，然后点击 <b>开始</b>。",
+                },
+                second: {
+                  title: "添加订阅",
+                  text: "点击下方按钮 — 应用程序将打开并自动添加订阅。如果未成功，请关闭应用程序并重试。",
+                },
+                third: {
+                  title: "连接并使用",
+                  text: "打开应用程序并连接到服务器",
+                },
+              },
+            },
           },
         },
         fa: {
@@ -2227,7 +2346,7 @@
           addSubscription: "افزودن اشتراک",
           clashVerge: "⭐ Hiddify",
           flClash: "FlClash",
-          happAlpha: "Happ (alpha)",
+          happAlpha: "⭐ Happ",
           comingSoon: "Coming soon…",
           separateLinksTitle: "لیست سرورهای موجود",
           separateLinks1:
@@ -2275,6 +2394,22 @@
               third: {
                 title: "اتصال و لذت بردن",
                 text: "در بخش اصلی، روی دکمه بزرگ روشن/خاموش در مرکز کلیک کنید تا به VPN متصل شوید. در صورت نیاز، در بخش <b>پروکسی</b> سرور دیگری را انتخاب کنید. لذت ببرید :)",
+              },
+            },
+            happ: {
+              android: {
+                first: {
+                  title: "نصب و باز کردن Happ",
+                  text: "صفحه را در گوگل پلی باز کرده و برنامه را نصب کنید. آن را اجرا کنید، منطقه <b>روسیه</b> را انتخاب کرده و سپس روی <b>شروع</b> کلیک کنید.",
+                },
+                second: {
+                  title: "افزودن اشتراک",
+                  text: "روی دکمه زیر کلیک کنید — برنامه باز می‌شود و اشتراک به‌طور خودکار اضافه می‌شود.",
+                },
+                third: {
+                  title: "اتصال و لذت بردن",
+                  text: "در بخش اصلی، روی دکمه بزرگ روشن/خاموش در مرکز کلیک کنید تا به VPN متصل شوید. در صورت نیاز، با ضربه زدن روی نماد «>» در پایین، سرور دیگری را انتخاب کنید. لذت ببرید :)",
+                },
               },
             },
           },
