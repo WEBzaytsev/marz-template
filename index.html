@@ -905,6 +905,7 @@
         <p class="my-text-content mb-2" x-text="$t('separateLinks1')"></p>
         <p class="my-text-content mb-0" x-text="$t('separateLinks2')"></p>
 
+        <div class="mt-4">
         {% for link in user.links %}
         <div
           class="input-group input-group-lg border border-0 text-bg-dark rounded-4 mb-3"
@@ -937,6 +938,7 @@
           </button>
         </div>
         {% endfor %}
+        </div>
       </div>
       {% endif %}
 
