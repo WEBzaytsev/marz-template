@@ -1380,11 +1380,64 @@
               role="tabpanel"
               aria-labelledby="ios-app-happ-tab"
             >
-              <div
-                class="alert alert-secondary"
-                role="alert"
-                x-text="$t('comingSoon')"
-              ></div>
+              <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('guideContent.happ.ios.first.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content"
+                      x-html="$t('guideContent.happ.ios.first.text')"
+                    ></p>
+                    <a
+                      class="btn my-btn-secondary"
+                      href="https://apps.apple.com/us/app/happ-proxy-utility/id6504287215"
+                      role="button"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <span x-text="$t('openInApp', {app: 'App Store'})"></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('guideContent.happ.ios.second.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content"
+                      x-html="$t('guideContent.happ.ios.second.text')"
+                    ></p>
+                    <a
+                      class="btn my-btn-primary"
+                      id="sub-url-ios-happ"
+                      role="button"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      x-text="$t('addSubscription')"
+                    ></a>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="my-block-big h-100">
+                    <span class="my-step-counter mb-1"></span>
+                    <h5
+                      class="my-text-heading fw-semibold"
+                      x-text="$t('guideContent.happ.ios.third.title')"
+                    ></h5>
+                    <p
+                      class="my-text-content mb-0"
+                      x-html="$t('guideContent.happ.ios.third.text')"
+                    ></p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
